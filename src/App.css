@@ -1,0 +1,96 @@
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e2f; /* Dark blue background */
+  color: #ffffff; /* White text for contrast */
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.editors {
+  display: flex;
+  height: 50%; /* Adjust height for editors */
+  margin: 0; /* Remove margin from the container */
+  padding: 5px; /* Remove padding from the container */
+}
+
+.editor {
+  flex: 1; /* Default flex-grow for equal length */
+  margin: 0 2px; /* Reduced margin between editors */
+  background-color: #3b3f5c; /* Editor background */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Rounded corners */
+  transition: flex 0.3s ease; /* Smooth transition for flex change */
+  min-width: 20vw; /* Minimum width to keep text visible */
+}
+
+.editor.inactive {
+  flex: 1; /* Keep the width full when inactive */
+}
+
+.editor.active {
+  flex: 1.5; /* Expand width when active */
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #4e5460; /* Header background */
+}
+
+.copy-button,
+.toggle-button {
+  background: none;
+  border: none;
+  color: #ffffff; /* White color for the icon */
+  cursor: pointer;
+  font-size: 1.2em; /* Icon size */
+  transition: color 0.3s;
+}
+
+.copy-button:hover,
+.toggle-button:hover {
+  color: #ffcc00; /* Change color on hover */
+}
+
+/* Textarea styling */
+.editor-textarea {
+  width: 100%; /* Full width */
+  height: calc(100% - 40px); /* Adjust height to fit within the editor */
+  border: none; /* Remove border */
+  border-radius: 0; /* No rounded corners */
+  padding: 10px; /* Padding for the textarea */
+  background-color: #3b3f5c; /* Match editor background */
+  color: #ffffff; /* Text color */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+  resize: none; /* Disable resizing */
+  min-width: 20vw; /* Minimum width to keep text visible */
+  word-wrap: break-word; /* Enable word wrapping */
+  overflow-wrap: break-word; /* Enable overflow wrapping */
+}
+
+.editor-textarea:focus {
+  outline: none; /* Remove outline on focus */
+  background-color: #4e5460; /* Darker background on focus */
+}
+
+/* Styling for inactive editor content */
+.editor-content {
+  width: 100%; /* Full width */
+  height: calc(100% - 40px); /* Adjust height to fit within the editor */
+  padding: 10px; /* Padding for the content */
+  background-color: #3b3f5c; /* Match editor background */
+  color: #ffffff; /* Text color */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+  overflow-wrap: break-word; /* Enable overflow wrapping */
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
